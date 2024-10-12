@@ -2,6 +2,7 @@ import requests
 import allure
 
 from constants import Url
+from helpers.helpers import delete_courier
 
 
 @allure.feature("Логин курьера")
@@ -59,3 +60,4 @@ class TestLoginCourier:
             response.status_code == 404
             and response_json["message"] == "Учетная запись не найдена"
         )
+
