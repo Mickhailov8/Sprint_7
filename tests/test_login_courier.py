@@ -19,6 +19,8 @@ class TestLoginCourier:
 
         assert response.status_code == 200 and "id" in response.text
 
+
+
     @allure.title("Авторизация без логина")
     def test_login_without_login(self, create_and_delete_courier):
         payload = {"login": "", "password": create_and_delete_courier["password"]}
@@ -30,6 +32,7 @@ class TestLoginCourier:
             response.status_code == 400
             and response_json["message"] == "Недостаточно данных для входа"
         )
+
 
     @allure.title("Авторизация без пароля")
     def test_login_without_password(self, create_and_delete_courier):
@@ -60,4 +63,3 @@ class TestLoginCourier:
             response.status_code == 404
             and response_json["message"] == "Учетная запись не найдена"
         )
-
