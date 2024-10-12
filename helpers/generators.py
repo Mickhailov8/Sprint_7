@@ -23,3 +23,18 @@ def generate_courier_data():
     courier_data["first_name"] = first_name
 
     return courier_data
+
+def generate_courier_data1():
+
+    # создаём словарь, чтобы метод мог его вернуть
+    courier_data = {}
+    # генерируем логин, пароль и имя курьера
+    login = generate_random_string(10)
+    password = generate_random_string(10)
+    first_name = generate_random_string(0)
+
+    courier_data["login"] = login
+    courier_data["password"] = password
+    courier_data["first_name"] = first_name
+
+    return courier_data
